@@ -14,10 +14,10 @@ jobs:
         run: bun install
 
       - name: Run linter
-        run: bun run lint
+        run: bunx biome check --linter-enabled=true --formatter-enabled=false --assists-enabled=false
 
       - name: Check formatting
-        run: bun run format --check
+        run: bunx biome check --formatter-enabled=true --linter-enabled=false --assists-enabled=false
 
       - name: Install Playwright browsers
         run: bunx playwright install --with-deps
