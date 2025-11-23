@@ -2,10 +2,8 @@ import { createType, AvroReader, AvroWriter, InMemoryReadableBuffer } from "@sac
 import { InfiniteInMemoryBuffer } from "./buffer";
 import { schema, users } from "./shared";
 
-// 2. Create a Type from the schema
+// Create a Type from the schema
 const userType = createType(schema);
-
-
 
 async function runExample() {
   const outputElement = document.getElementById("output");
