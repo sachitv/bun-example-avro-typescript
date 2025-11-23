@@ -1,6 +1,5 @@
 node_modules
 bun.lockb
-users.avro
 playwright-report/
 test-results/
 dist/

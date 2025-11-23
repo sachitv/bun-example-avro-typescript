@@ -2,6 +2,8 @@
 import { createType, AvroReader, AvroWriter, InMemoryReadableBuffer } from "@sachitv/avro-typescript";
 import { InfiniteInMemoryBuffer } from "./buffer";
 import { schema, users } from "./shared";
+import { tmpdir } from "os";
+import { randomUUID } from "crypto";
 
 // 2. Create a Type from the schema
 const userType = createType(schema);
@@ -21,10 +23,10 @@ async function main() {
   await writer.close();
   console.log(`Data written to in-memory buffer: ${numWritten} records.`);
 
-  // 6. Save the in-memory buffer to an Avro file
-  const avroBuffer = memoryBuffer.getBuffer();
-  const filePath = "users.avro";
-  await Bun.write(filePath, avroBuffer);
+   // 6. Save the in-memory buffer to an Avro file
+   const avroBuffer = memoryBuffer.getBuffer();
+   const filePath = `${tmpdir()}/users-${randomUUID()}.avro`;
+   await Bun.write(filePath, avroBuffer);
   console.log(`In-memory buffer saved to ${filePath}`);
 
   // 7. Read the Avro file back into a buffer
