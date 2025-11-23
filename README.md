@@ -1,5 +1,7 @@
 # Bun Avro TypeScript Example
 
+[![CI](https://github.com/sachitv/bun-example-avro-typescript/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/sachitv/bun-example-avro-typescript/actions/workflows/ci.yml)
+
 This project demonstrates how to use the `@sachitv/avro-typescript` library with Bun to write and read Avro files.
 
 ## Setup
