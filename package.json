@@ -3,15 +3,18 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
-  "scripts": {
-    "start": "bun build ./src/browser.ts --outdir ./dist --sourcemap && bun run src/server.ts",
-    "test:node": "bun run src/index.ts",
-    "test:e2e": "bun build ./src/browser.ts --outdir ./dist --sourcemap && bunx playwright test"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.56.1",
-    "@types/bun": "latest"
-  },
+   "scripts": {
+     "start": "bun build ./src/browser.ts --outdir ./dist --sourcemap && bun run src/server.ts",
+     "test:node": "bun run src/index.ts",
+     "test:e2e": "bun build ./src/browser.ts --outdir ./dist --sourcemap && bunx playwright test",
+     "lint": "biome check .",
+     "format": "biome format . --write"
+   },
+   "devDependencies": {
+     "@biomejs/biome": "^1.8.3",
+     "@playwright/test": "^1.56.1",
+     "@types/bun": "latest"
+   },
   "dependencies": {
     "@sachitv/avro-typescript": "npm:@jsr/sachitv__avro-typescript"
   }
