@@ -1,0 +1,15 @@
+{
+  "name": "bun-example-avro-typescript",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@sachitv/avro-typescript": "npm:@jsr/sachitv__avro-typescript"
+  }
+}
