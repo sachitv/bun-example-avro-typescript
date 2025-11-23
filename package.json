@@ -4,9 +4,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "bun run server.ts"
+    "start": "bun run server.ts",
+    "test:e2e": "bun build ./browser.ts --outdir ./dist && bunx playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@types/bun": "latest"
   },
   "peerDependencies": {
