@@ -3,7 +3,7 @@ Bun.serve({
   async fetch(req) {
     const url = new URL(req.url);
     const filePath = url.pathname === "/" ? "/index.html" : url.pathname;
-    const file = Bun.file(`.${filePath}`);
+    const file = url.pathname.startsWith("/dist/") ? Bun.file(`.${filePath}`) : Bun.file(`./src${filePath}`);
     if (await file.exists()) {
       return new Response(file);
     }

@@ -4,15 +4,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "bun run server.ts",
-    "test:e2e": "bun build ./browser.ts --outdir ./dist && bunx playwright test"
+    "start": "bun build ./src/browser.ts --outdir ./dist --sourcemap && bun run src/server.ts",
+    "test:node": "bun run src/index.ts",
+    "test:e2e": "bun build ./src/browser.ts --outdir ./dist --sourcemap && bunx playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
   },
   "dependencies": {
     "@sachitv/avro-typescript": "npm:@jsr/sachitv__avro-typescript"
