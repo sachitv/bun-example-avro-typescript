@@ -16,6 +16,6 @@
      "@types/bun": "latest"
    },
   "dependencies": {
-    "@sachitv/avro-typescript": "npm:@jsr/sachitv__avro-typescript"
+    "@sachitv/avro-typescript": "npm:@jsr/sachitv__avro-typescript@^0.6.0"
   }
 }
